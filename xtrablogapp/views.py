@@ -26,10 +26,11 @@ def post_page_view(request):
 
     return render(request, 'main/post.html')
 
+# single blog post page
 def single_blog_post(request, blog_id):
     post = Post.objects.get(id=blog_id)
     context={
-        'blog':post
+        'blog' : post
     }
     return render(request, 'main/post.html', context)
 
