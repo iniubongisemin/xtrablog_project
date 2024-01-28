@@ -30,7 +30,7 @@ def post_page_view(request):
 def single_blog_post(request, blog_id):
     post = Post.objects.get(id=blog_id)
     context={
-        'blog' : post
+        'article' : post
     }
     return render(request, 'main/post.html', context)
 
