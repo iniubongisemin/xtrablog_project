@@ -33,9 +33,9 @@
                             <p>
                                 {{article.article}}    
                             </p>
-                            {{% for tag in article.tags.all %}
+                            {% for tag in article.tags.all %}
                             <span class="d-block text-right tm-color-primary">{{tag.name}}</span>
-                            {{% endfor %}}
+                            {% endfor %}
                         </div>
                         
                         <!-- Comments -->
@@ -107,7 +107,7 @@
                         </ul>
                         <hr class="mb-3 tm-hr-primary">
                         <h2 class="tm-mb-40 tm-post-title tm-color-primary">Related Posts</h2>
-                        {{% for x in similar_articles %}}
+                        {% for x in similar_articles %}}
                         <a href="#" class="d-block tm-mb-40">
                             <figure>
                                 <img src="{{x.thumbnail.url}}" alt="Image" class="mb-3 img-fluid">
