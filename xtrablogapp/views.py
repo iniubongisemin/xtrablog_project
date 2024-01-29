@@ -29,9 +29,12 @@ def post_page_view(request):
 # single blog post page
 def single_blog_post(request, blog_id):
     post = Post.objects.get(id=blog_id)
+    categories = Category.objects.all()
+    similar_post = Post.objects.filter(category = post.category).exclude(id=post.id)
     context={
         'article' : post,
-        'categories' : categories
+        'categories' : categories,
+        'similar_articles' : similar_post
     }
     return render(request, 'main/post.html', context)
 
