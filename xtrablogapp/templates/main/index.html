@@ -17,8 +17,8 @@
                 </div>                
             </div>            
             <div class="row tm-row">
-                {% for data in articles %}
-
+                {% for data in articles %} 
+<!--        NB: you can use any name, it must not be data! x, info etc can work just fine!          -->
                 <article class="col-12 col-md-6 tm-post">
                     <hr class="tm-hr-primary">
                     <a href="{%url 'blog' data.id %}" class="effect-lily tm-post-link tm-pt-60">
@@ -26,7 +26,7 @@
                             <img src="{{data.thumbnail.url}}" alt="Image" class="img-fluid">                            
                         </div>
                         <span class="position-absolute tm-new-badge">New</span>
-                        <h2 class="tm-pt-30 tm-color-primary tm-post-title">Simple and useful HTML layout</h2>
+                        <h2 class="tm-pt-30 tm-color-primary tm-post-title">{{data.title}}</h2>
                     </a>                    
                     <p class="tm-pt-30">
                         {{data.description}}
@@ -42,7 +42,7 @@
                     </div>
                 </article>
 
-                {%endfor%}
+                {% endfor %}
             </div>
             <div class="row tm-row tm-mt-100 tm-mb-75">
                 <div class="tm-prev-next-wrapper">
