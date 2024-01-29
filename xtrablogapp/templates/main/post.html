@@ -33,7 +33,9 @@
                             <p>
                                 {{article.article}}    
                             </p>
-                            <span class="d-block text-right tm-color-primary">Creative . Design . Business</span>
+                            {{% for tag in article.tags.all %}
+                            <span class="d-block text-right tm-color-primary">{{tag.name}}</span>
+                            {{% endfor %}}
                         </div>
                         
                         <!-- Comments -->
