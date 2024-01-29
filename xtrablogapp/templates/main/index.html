@@ -25,14 +25,16 @@
                         <div class="tm-post-link-inner">
                             <img src="{{data.thumbnail.url}}" alt="Image" class="img-fluid">                            
                         </div>
-                        <span class="position-absolute tm-new-badge">New</span>
+                        <span class="position-absolute tm-new-badge">{{data.category.name}}</span>
                         <h2 class="tm-pt-30 tm-color-primary tm-post-title">{{data.title}}</h2>
                     </a>                    
                     <p class="tm-pt-30">
                         {{data.description}}
                     </p>
                     <div class="d-flex justify-content-between tm-pt-45">
-                        <span class="tm-color-primary">Travel . Events</span>
+                        {% for tag in data.tags.all %}
+                        <span class="tm-color-primary">{{tag.name}}</span>
+                        {{% endfor %}}
                         <span class="tm-color-primary">{{data.published_date}}</span>
                     </div>
                     <hr>
