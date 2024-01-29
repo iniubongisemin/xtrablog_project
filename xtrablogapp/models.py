@@ -33,6 +33,7 @@ class Post(models.Model):
     published_date = models.DateField(auto_now_add=True)
     author = models.CharField(max_length=100)
     thumbnail = models.ImageField(upload_to='thumbnail', default='example.png')
+    category = models.ForeignKey(Category, )
 
     def __str__(self) -> str:
         return self.title
