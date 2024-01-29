@@ -47,4 +47,50 @@ class Post(models.Model):
 # steps
 # python manage.py makemigrations
 # python manage.py migrate
-# open admin panel and 
+# open admin panel and select the related fields in tags
+# add a new category e.g Tech
+# add a new post with lorem text
+
+
+# cmd in vscode 
+# python manage.py shell 
+# to get all posts that belong to a particular category 
+# from main_app.models import Post, Category, Tag
+# Making query across relationships
+# post = Post.objects.filter(category__name='business') NB: name is the field in the category 
+# post
+# single_post = Post.objects.gey(id=1)
+# single_post.category
+# output:
+# cat = Category.objects.get(id=1)
+# cat.articles.all()
+# output:
+# to count the number of blog post that belongs to this category 
+# cat.articles.count()
+# output:
+# cat.articles.filter(author='john') NB: this filter operation is carried out on the post table 
+# output:
+# cat.articles.create(title:'test postt', description='testing', article=testing article', author='inie') NB: this adds a new blog post directly to this category 
+# output: 
+# cat.articles.all()
+# output:
+# get_post=Post.objects.get(id=4)
+# cat.articles.add 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
