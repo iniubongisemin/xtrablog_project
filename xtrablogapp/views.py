@@ -23,7 +23,7 @@ def contact_page_view(request):
 
 # post page
 def post_page_view(request):
-
+    
     return render(request, 'main/post.html')
 
 # single blog post page
