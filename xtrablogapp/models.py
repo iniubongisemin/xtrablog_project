@@ -19,7 +19,7 @@ class Tag(models.Model):
 class Comment(models.Model):
     name = models.CharField(max_length=50)
     email = models.EmailField(max_length=200, verbose_name='Email Address')
-    message = models.Textfield()
+    message = models.TextField()
     timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self) -> str:
@@ -34,7 +34,7 @@ class Post(models.Model):
     author = models.CharField(max_length=100)
     thumbnail = models.ImageField(upload_to='thumbnail', default='example.png')
     # ForeignKey is used to create a many to one relationship
-    category = models.ForeignKey(Category, related_name='articles, on_delete=models.CASCADE, default=1) 
+    category = models.ForeignKey(Category, related_name='articles', on_delete=models.CASCADE, default=1) 
     # when you delete an object in a category then the other objects connected to it are also deleted
     # category = models.ForeignKey(Category, on_delete=models.PROTECT) # when you attempt to delete an object in a category with other objects connected to it, it prevents the delete action! 
     # category = models.ForeignKey(Category, on_delete=models.DO_NOTHING) # when you delete an object in a category then nothing is done to the other objects connected to it 
@@ -43,6 +43,9 @@ class Post(models.Model):
     
     def __str__(self) -> str:
         return self.title
+    
+    def __str__(self) -> str:
+        return self.article
 
 # steps
 # python manage.py makemigrations

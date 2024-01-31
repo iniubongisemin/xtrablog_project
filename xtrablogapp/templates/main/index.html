@@ -34,7 +34,7 @@
                     <div class="d-flex justify-content-between tm-pt-45">
                         {% for tag in data.tags.all %}
                         <span class="tm-color-primary">{{tag.name}}</span>
-                        {{% endfor %}}
+                        {% endfor %}
                         <span class="tm-color-primary">{{data.published_date}}</span>
                     </div>
                     <hr>
@@ -76,7 +76,6 @@
         * Many to one relationship: When many objects in db A can only connect to on object in db B
         * One to one relationship: When one object can only connect with one object in another database 
         * Many to many relationship: When a single object can connect with multiple objects from db A and vice versa for db B
-        
 -->
     </div>    
 {% endblock content %}
